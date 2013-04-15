@@ -1,0 +1,1 @@
+function validateForms(){$("#subForm").validate()}$(document).ready(function(){validateForms()});

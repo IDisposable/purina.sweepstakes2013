@@ -1,0 +1,609 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+// import normalize
+  @import "normalize";
+
+// import mixins
+  @import "mixins";
+
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #666;
+}
+
+body {
+  color: #666;
+  font-family: $sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Leverage custom styles
+   ========================================================================== */
+body {
+  #wrap {
+    width: 810px;
+    margin: 0 auto;
+    position: relative;
+  }/* wrap */
+}/* body */
+
+/****************************** HEADER ******************************/
+header {
+  background: url(../images/bg-header.png) no-repeat;
+  width: 810px;
+  height: 273px;
+
+  h1 {
+    position: absolute;
+    text-indent: -9999px; outline: none;
+  }
+
+  h2 {
+    @extend h1;
+  }
+
+  p {
+    width: 223px;
+    height: 79px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    a {
+      background-image: url(../images/bg-visit_us.png);
+      background-repeat: no-repeat;
+      width: 223px;
+      height: 79px;
+      display: block;
+      text-indent: -9999px; outline: none;
+    }
+
+    a:hover {
+      background-position: 0 -79px;
+    }
+  }
+}/* header */
+
+/****************************** MAIN ******************************/
+#main {
+  background: url(../images/bg-main.png) no-repeat 0 152px;
+
+  .contest-details {
+    background: url(../images/bg-contest_details.png) no-repeat;
+    width: 810px;
+    height: 200px;
+
+    h3 {
+      position: absolute;
+      text-indent: -9999px; outline: none;
+    }
+
+    h4 {
+      @extend h3;
+    }
+
+    p {
+      @extend h4;
+    }
+  }/* contest details */
+
+  .three-steps-to-win {
+    background: url(../images/bg-three_steps.png) no-repeat;
+    width: 810px;
+    height: 59px;
+    margin: 15px 0 0 0;
+
+    p {
+      position: absolute;
+      text-indent: -9999px; outline: none;
+    }
+  }/* three steps */
+
+  .form {
+    width: 670px;
+    margin: 0 auto;
+
+    p.required {
+      margin: 30px 130px 30px 0;
+      font-size: 11px;
+      font-style: italic;
+      text-align: right;
+    }
+
+    form {
+      
+      ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          list-style: none;
+          margin: 0 0 5px 0;
+          clear: both;
+
+          label {
+            width: 230px;
+            margin: 0;
+            padding: 3px 5px;
+            text-align: right;
+            display: block;
+            float: left;
+          }/* label */
+
+          label.error {
+            color: red;
+            font-style: italic;
+            margin: 0 0 0 5px;
+            padding: 0;
+            font-size: 12px;
+            display: inline;
+            width: 125px;
+          }
+
+          input {
+            background: #ddd;
+            width: 280px;
+            margin: 0 0 0 10px;
+            padding: 3px 5px;
+            border: none;
+            border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px;
+          }/* input */
+
+          input:focus {
+            outline: none;
+          }
+
+          input.error {
+            width: 180px; border: 1px dashed red; float: left;
+          }
+
+          select {
+            width: 290px;
+            margin: 0 0 0 10px;
+          }
+
+          select.error {
+            @extend input.error;
+            width: 192px;
+          }
+
+          input.submit {
+            *color: transparent;
+            background-image: url(../images/bg-submit.png);
+            background-repeat: no-repeat;
+            width: 117px;
+            height: 32px;
+            margin: 30px 0 0 250px;
+            text-indent: -9999px; outline: none;
+            display: block;
+          }
+
+          input.submit:hover {
+            background-position: 0 -32px;
+          }
+        }/* li */
+
+        li:after {
+          clear: both;
+          content: '';
+          display: block;
+          height: 0;
+          visibility: hidden;
+        }
+
+        li.radios {
+          margin: 0 0 0 250px;
+          padding: 5px 0;
+          position: relative;
+
+          input {
+            background: none;
+            width: auto;
+            margin: 0;
+            float: left;
+          }
+
+          input.error {
+            width: auto;
+          }
+
+          label {
+            width: auto;
+            margin: 0 15px 0 5px;
+            padding: 0;
+            text-align: left;
+          }
+
+          label.grad-undergrad {
+            display: none;
+          }
+
+          label.error {
+            position: absolute;
+            left: -150px;
+            top: 5px;
+          }
+        }/* radios */
+
+        li.checkboxes {
+          margin: 0 0 0 250px;
+          padding: 5px 0;
+          position: relative;
+
+          input {
+            background: none;
+            width: auto;
+            margin: 0;
+            display: inline;
+            float: left;
+          }
+
+          input.error {
+            width: auto;
+          }
+
+          label {
+            width: auto;
+            margin: 0 15px 0 5px;
+            padding: 0;
+            display: inline;
+            text-align: left;
+            font-size: 11px;
+            float: left;
+          }
+
+          label.error {
+            position: absolute;
+            left: -150px;
+            top: 5px;
+            font-size: 12px;
+          }
+
+          label.rules {
+            display: none;
+          }
+        }/* checkboxes */
+
+        li.test {
+          display: none;
+        }
+      }/* ul */
+    }/* form */
+  }/* .form */
+
+  .thanks {
+    background: url(../images/bg-thank_you.png) no-repeat;
+    width: 810px;
+    height: 152px;
+
+    h3 {
+      position: absolute;
+      text-indent: -9999px; outline: none;
+    }
+
+    h4 {
+      position: absolute;
+      text-indent: -9999px; outline: none;
+    }
+  }/* thanks */
+
+  .share {
+    
+    h4 {
+      background: url(../images/bg-share_directions.png) no-repeat;
+      width: 419px;
+      height: 47px;
+      margin: 20px auto;
+      text-indent: -9999px; outline: none;
+    }
+
+    p.link {
+      color: #0073b2;
+      margin: 0 0 50px 0;
+      text-align: center;
+    }
+
+    p.share-button {
+      background: url(../images/bg-share_list.png) no-repeat;
+      width: 490px;
+      height: 44px;
+      padding: 13px 0 0 320px;
+      text-indent: -9999px; outline: none;
+      cursor: pointer;
+    }/* share button */
+
+    #invitebox-href {
+      text-indent: -9999px; outline: none;
+      display: none;
+    }
+  }/* share */
+
+  .signed-up {
+    background: url(../images/bg-signed_up.png) no-repeat;
+    width: 810px;
+    height: 152px;
+
+    h4 {
+      position: absolute;
+      text-indent: -9999px; outline: none;
+    }
+
+    p {
+      @extend h4;
+    }
+  }/* signed up */
+}/* main */
+
+.thanks #main {
+  background: url(../images/bg-main.png) no-repeat 0 152px;
+}
+
+/****************************** FOOTER ******************************/
+footer {
+  background: url(../images/bg-footer.png) no-repeat;
+  height: 185px;
+  padding-bottom: 100px;
+  position: relative;
+
+  p.apply {
+    width: 170px;
+    height: 44px;
+    position: absolute;
+    top: 0;
+    left: 215px;
+    z-index: 99;
+
+    a {
+      background-image: url(../images/bg-apply.png);
+      background-repeat: no-repeat;
+      width: 170px;
+      height: 44px;
+      display: block;
+      text-indent: -9999px; outline: none;
+    }
+
+    a:hover {
+      background-position: 0 -44px;
+    }
+  }
+
+  p.alerts {
+    width: 189px;
+    height: 42px;
+    position: absolute;
+    top: 0;
+    left: 425px;
+    z-index: 99;
+
+    a {
+      background-image: url(../images/bg-alerts.png);
+      background-repeat: no-repeat;
+      width: 189px;
+      height: 42px;
+      display: block;
+      text-indent: -9999px; outline: none;
+    }
+
+    a:hover {
+      background-position: 0 -42px;
+    }
+  }
+
+  p.rules {
+    width: 100%;
+    position: absolute;
+    top: 110px;
+    text-align: center;
+    z-index: 99;
+  }
+
+  div.rules {
+    width: 80%;
+    margin: 0 auto;
+    padding: 200px 0 50px 0;
+    font-size: 9px;
+    font-style: italic;
+    position: relative;
+    z-index: 9;
+  }
+
+}/* footer */
+
+.thanks footer {
+  margin-top: 50px;
+
+}
+
+
+/* NOT LIKED STYLES */
+.notLikedContent p {font-size: 13px; text-align: center;}
+.notLikedContent .fb-like {width: 150px; margin: 20px 0 0 0; position: relative; left: 380px;}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
